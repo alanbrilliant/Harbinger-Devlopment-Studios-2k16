@@ -14,8 +14,11 @@ public class PinchZoom : MonoBehaviour
 	void Start ()
 	{
 		// Game Object will be created and make current object as its child (only because we can set virtual anchor point of gameobject and can zoom in and zoom out from particular position)
+
 		parentObject = new GameObject("ParentObject");
+
 		parentObject.transform.parent = transform.parent;
+
 		parentObject.transform.position = new Vector3(transform.position.x*-1, transform.position.y*-1, transform.position.z);
 		transform.parent = parentObject.transform;
 		ScreenSize = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width,Screen.height));
@@ -24,6 +27,41 @@ public class PinchZoom : MonoBehaviour
 	}
 	void Update ()
 	{
+		Vector3 oldPos = gameObject.transform.position;
+
+		if (oldPos.x > 10f) {
+			Vector3 newPos = oldPos;
+			newPos.x = 10;
+			transform.position = newPos;
+		}
+		if (oldPos.x < -10f){
+			Vector3 newPos = oldPos;
+			newPos.x = -10;
+			transform.position = newPos;
+		}
+
+		if (oldPos.y > 10f){
+			Vector3 newPos = oldPos;
+			newPos.y = 10;
+			transform.position = newPos;
+		}
+		if (oldPos.y < -5f){
+			Vector3 newPos = oldPos;
+			newPos.y = -5;
+			transform.position = newPos;
+		}
+
+		if (oldPos.z > 10f){
+			Vector3 newPos = oldPos;
+			newPos.z = 10;
+			transform.position = newPos;
+		}
+		if (oldPos.z < -10f){
+			Vector3 newPos = oldPos;
+			newPos.z = -10;
+			transform.position = newPos;
+		}
+
 		if(Input.GetMouseButtonDown(0))
 			isMousePressed = true;
 		else if(Input.GetMouseButtonUp(0))
@@ -36,6 +74,7 @@ public class PinchZoom : MonoBehaviour
 			Vector3 pos = transform.position + diff;
 			if(pos.x > ScreenSize.x * (parentObject.transform.localScale.x-1))
 				pos.x = ScreenSize.x * (parentObject.transform.localScale.x-1);
+
 			if(pos.x < ScreenSize.x * (parentObject.transform.localScale.x-1)*-1)
 				pos.x = ScreenSize.x * (parentObject.transform.localScale.x-1)*-1;
 			if(pos.y > ScreenSize.y * (parentObject.transform.localScale.y-1))
