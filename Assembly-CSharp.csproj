@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\LaunchWebpage.cs" />
      <Compile Include="Assets\PinchZoom.cs" />
      <Compile Include="Assets\ViewDrag.cs" />
  <Reference Include="UnityEngine.UI">
