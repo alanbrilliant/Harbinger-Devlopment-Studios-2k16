@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PinchZoom.cs">
     <Files>
       <File FileName="Assets\PinchZoom.cs" Line="44" Column="28" />
+=======
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PinchZoom.cs">
+    <Files>
+      <File FileName="Assets\PinchZoom.cs" Line="59" Column="20" />
+>>>>>>> ae20b6a498b48fa6c4b1ac95d52ddc550b041ed6
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
