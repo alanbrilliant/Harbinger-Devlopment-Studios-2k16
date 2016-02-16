@@ -56,9 +56,9 @@ public class PinchZoom : MonoBehaviour
 			newPos.z = 10;
 			transform.position = newPos;
 		}
-		if (oldPos.z < -10f){
+		if (oldPos.z < .4f){
 			Vector3 newPos = oldPos;
-			newPos.z = -10;
+			newPos.z = 0.4f;
 			transform.position = newPos;
 		}
 
